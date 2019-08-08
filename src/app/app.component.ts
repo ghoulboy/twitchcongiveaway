@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.entryForm = new FormGroup({
       email: new FormControl('', Validators.required),
-      twitchName: new FormControl('drxdesign', Validators.required),
+      twitchName: new FormControl('', Validators.required),
       youtubeName: new FormControl(''),
       code: new FormControl('', Validators.required)
     });

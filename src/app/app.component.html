@@ -1,68 +1,93 @@
-<div class="container">
+<div class="container" style="background: white;">
   <div class="row justify-content-center">
     <div class="col-sm-12">
-        <div class="d-flex justify-content-center">
-          <img src=".\assets\logo\banner.png" alt="banner">
+      <div class="d-flex justify-content-center">
+        <img src=".\assets\logo\banner.png" alt="banner">
+      </div>
+    </div>
+  </div>
+  <div class="row" style="padding-bottom: 10px; padding-top: 5px;">
+    <div class="col-sm-4" >
+      <div class="card h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-center" style="padding-bottom: 10px; padding-top: 5px;">
+            <a href="https://www.twitch.tv/ghoulboy"><img src=".\assets\socials\twitch.png" width="100%" alt="banner"></a>
+          </div>
+          <div class="d-flex justify-content-center" style="padding-bottom: 10px;">
+            <a href="https://www.youtube.com/c/ghoulboy?sub_confirmation=1"><img src=".\assets\socials\yt.png" width="100%" alt="banner"></a>
+          </div>
+          <div class="d-flex justify-content-center" style="padding-bottom: 10px;">
+            <a href="https://www.twitter.com/ghoulboyttv"><img src=".\assets\socials\twit.png" width="100%" alt="banner"></a>
+          </div> 
+          <div class="d-flex justify-content-center" style="padding-bottom: 10px;">
+            <a href="https://www.instagram.com/ghoulboyttv"><img src=".\assets\socials\ig.png" width="100%" alt="banner"></a>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
-      <ul>
-        <li>
-            <a href="https://www.twitch.tv/ghoulboy">Twitch</a>
-        </li>
-        <li>
-            <a href="https://www.youtube.com/c/ghoulboy">YouTube</a>
-        </li>
-        <li>
-            <a href="https://www.instagram.com/ghoulboyttv">Instagram</a>
-        </li>
-        <li>
-            <a href="https://www.twitter.com/ghoulboyttv">Twitter</a>
-        </li> 
-      </ul>
-    </div>
-    <div class="col-sm-6">
-      <h2>this is place holder for giveaway entry rules</h2>
-    </div>
-  </div>
-  <div class="row" style="margin-bottom: 10px;">
-    <div class="col-sm-12">
-      <div [formGroup]="entryForm">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input required formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email">
-          <div class="row">
-            <div class="col">
-              <label for="twitch">Twitch Name</label>
-              <input required formControlName="twitchName" type="text" class="form-control" id="twitch" placeholder="Enter twitch name">
+    <div class="col-sm-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <div [formGroup]="entryForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input required formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email">
+              <div class="row">
+                <div class="col">
+                  <label for="twitch">Twitch Name</label>
+                  <input required formControlName="twitchName" type="text" class="form-control" id="twitch" placeholder="Enter twitch name">
+                </div>
+                <div class="col">
+                  <label for="youtube">YouTube Name</label>
+                  <input formControlName="youtubeName" type="text" class="form-control" id="youtube" placeholder="Enter youtube name">
+                </div>
+              </div>
+              <label for="code">Code</label>
+              <input required formControlName="code" type="text" class="form-control" id="code" placeholder="Enter code">
             </div>
-            <div class="col">
-              <label for="youtube">YouTube Name</label>
-              <input formControlName="youtubeName" type="text" class="form-control" id="youtube" placeholder="Enter youtube name">
+            <div class="float-right">
+              <button type="submit" (click)="onSubmit(entryForm.value)" [disabled]="entryForm.errors"class="btn btn-primary float-right">Submit</button>
+              <p style="color: red">{{res}}</p>
             </div>
           </div>
-          <label for="code">Code</label>
-          <input required formControlName="code" type="text" class="form-control" id="code" placeholder="Enter code">
         </div>
-        <div class="float-right">
-          <button type="submit" (click)="onSubmit(entryForm.value)" [disabled]="entryForm.errors"class="btn btn-primary float-right">Submit</button>
-          <!-- <button type="submit" (click)="test()" class="btn btn-primary">Submit</button> -->
-          <p style="color: red">{{res}}</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h1>How To Enter:</h1>
+          <ul>
+            <li>
+              <h5>Follow on <a href="https://www.twitch.com/ghoulboy">Twitch</a></h5>
+            </li>
+            <li>
+              <h5>Subscribe on <a href="https://www.youtube.com/c/ghoulboy?sub_confirmation=1">YouTube</a></h5>
+            </li>
+            <li>
+              <h5>Enter Email and Twitch Name</h5>
+            </li>
+            <li>
+              <h5>Submit!</h5>
+            </li>
+          </ul>
         </div>
-        
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-6">
-        <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/sauyvpsCk88" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/sauyvpsCk88" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="col-sm-6">
-        <!-- <iframe src="https://player.twitch.tv/?channel=ghoulboy" frameborder="0" allowfullscreen="true" scrolling="no" height="315" width="100%"></iframe><a href="https://www.twitch.tv/ghoulboy?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a> -->
+        <iframe src="https://player.twitch.tv/?channel=ghoulboy" frameborder="0" allowfullscreen="true" scrolling="no" height="315" width="100%"></iframe><a href="https://www.twitch.tv/ghoulboy?tt_content=text_link&tt_medium=live_embed" style="padding:2px 0px 4px; display:block; width:345px; font-weight:normal; font-size:10px; text-decoration:underline;"></a>
     </div>
   </div>
+  <footer class="page-footer font-small blue pt-4">
+    <div class="container-fluid text-center text-md-left">
+      <div class="footer-copyright text-center py-3"><small>GoodLuck :)</small></div>
+    </div>
+  </footer>
 </div>
 
 
